@@ -101,6 +101,50 @@ Access the dashboard at `http://localhost:8050`.
 
 The tool sends daily filtered job postings to your inbox. Ensure your email settings in the `.env` file are correctly configured.
 
+linkedin-job-scraper/
+│
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── config/
+│ ├── config.yaml # Configuration file for settings like API keys, database URL, etc.
+│ ├── logging.yaml # Configuration for logging
+├── data/
+│ ├── raw/ # Raw data collected from LinkedIn
+│ ├── processed/ # Processed data after cleaning and NLP
+│ └── logs/ # Log files for debugging and tracking
+├── src/
+│ ├── **init**.py # Makes src a Python package
+│ ├── data/
+│ │ ├── **init**.py
+│ │ ├── scraper.py # Code for web scraping from LinkedIn
+│ │ ├── data_cleaning.py # Code for cleaning and preprocessing scraped data
+│ │ └── database.py # Code for database interactions
+│ ├── nlp/
+│ │ ├── **init**.py
+│ │ ├── language_detection.py # NLP tasks, including language detection using LangChain or OpenAI
+│ │ └── job_analysis.py # Other job-specific analyses
+│ ├── utils/
+│ │ ├── **init**.py
+│ │ ├── helpers.py # Utility functions used across the project
+│ │ └── email_notifications.py # Functions for sending email notifications
+│ ├── dashboard/
+│ │ ├── **init**.py
+│ │ ├── app.py # Dashboard application code
+│ │ ├── plots.py # Plotting and visualization functions
+│ │ └── layout.py # Layout and UI components for the dashboard
+│ └── main.py # Main script to run the entire pipeline
+├── tests/
+│ ├── **init**.py
+│ ├── test_scraper.py # Unit tests for the scraper
+│ ├── test_data_cleaning.py # Unit tests for data cleaning
+│ ├── test_language_detection.py # Unit tests for language detection
+│ └── test_email_notifications.py # Unit tests for email notifications
+└── scripts/
+├── start_scraper.sh # Shell script to run the scraper
+├── start_dashboard.sh # Shell script to start the dashboard
+└── setup_env.sh # Shell script for setting up the environment
+
 ## Contributing
 
 Contributions are welcome! Please submit a pull request or open an issue to discuss your ideas.
