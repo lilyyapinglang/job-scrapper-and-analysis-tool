@@ -101,6 +101,7 @@ Access the dashboard at `http://localhost:8050`.
 
 The tool sends daily filtered job postings to your inbox. Ensure your email settings in the `.env` file are correctly configured.
 
+```
 linkedin-job-scraper/
 │
 ├── .gitignore
@@ -144,6 +145,7 @@ linkedin-job-scraper/
 ├── start_scraper.sh # Shell script to run the scraper
 ├── start_dashboard.sh # Shell script to start the dashboard
 └── setup_env.sh # Shell script for setting up the environment
+```
 
 ## Contributing
 
